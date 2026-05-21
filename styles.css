@@ -748,6 +748,13 @@ body.cursor-hover .cursor__ring {
 }
 .project-card:hover .project-card__tools { color: #8a7f7a; }
 
+/* Link wrapper — makes the whole card clickable */
+.project-card__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Top-edge accent line that slides in on hover */
 .project-card::before {
   content: '';
