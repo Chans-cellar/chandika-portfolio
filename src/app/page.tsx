@@ -113,10 +113,10 @@ export default function Home() {
             <div className="hero__panel reveal-up" aria-label="Render mode">
               <div className="hero__eq mono" aria-hidden="true">
                 <div>
-                  <span className="dim">vec3</span> p′ = p + n · <span className="acc">snoise</span>(p·ω + t) · α
+                  <span className="dim">float</span> r(θ) = a · <span className="acc">φ</span><sup>2θ/π</sup>
                 </div>
                 <div className="dim">
-                  t=<b id="u-t">0.00</b> ω=<b>1.40</b> α=<b>0.32</b> · <b id="u-fps">60</b>fps
+                  θ=<b id="u-t">0.00</b> φ=<b>1.618</b> chambers=<b id="u-ch">0</b> · <b id="u-fps">60</b>fps
                 </div>
               </div>
               <div className="modes" role="radiogroup" aria-label="Render mode">

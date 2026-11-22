@@ -51,16 +51,18 @@ export default function SiteFX() {
       set(o: Partial<SceneState>) { Object.assign(this.pending, o); this.real?.set(o); },
       setMode(i: number) { this.mode = i; this.real?.setMode(i); },
     };
-    const uT = $("#u-t"), uFps = $("#u-fps");
+    const uT = $("#u-t"), uFps = $("#u-fps"), uCh = $("#u-ch");
     let hudT = 0;
     const sceneReady = import("@/lib/scene")
       .then(({ createScene }) => {
         if (disposed) return;
         const s = createScene($<HTMLCanvasElement>("#gl")!, {
-          onFrame: ({ t, fps }) => {
+          onFrame: ({ t, theta, fps }) => {
             if (t - hudT < 0.1) return;
             hudT = t;
-            if (uT) uT.textContent = t.toFixed(2);
+            // θ grows forever; each 36° lays down a new chamber wall
+            if (uT) uT.textContent = theta.toFixed(2);
+            if (uCh) uCh.textContent = String(Math.floor(theta / ((2 * Math.PI) / 10)));
             if (uFps) uFps.textContent = String(fps);
           },
         });
@@ -356,7 +358,7 @@ export default function SiteFX() {
       if (disposed) return;
       lenis?.start();
       ctx.add(() => introHero(REDUCE));
-      scene.set(innerWidth > 1100 ? { x: 0.42, y: 0.08, scale: 1.15, dim: 1 } : { x: 0, y: 0.3, scale: 0.85, dim: 0.6 });
+      scene.set(innerWidth > 1100 ? { x: 0.4, y: 0.06, scale: 1.15, dim: 1 } : { x: 0, y: 0.3, scale: 0.72, dim: 0.6 });
       ScrollTrigger.refresh();
     })().catch((e) => {
       console.error(e);
@@ -380,7 +382,7 @@ export default function SiteFX() {
 
 function runLoader(ready: Promise<unknown>, REDUCE: boolean, ctx: gsap.Context) {
   const loader = $("#loader")!, num = $("#loader-num")!, bar = $("#loader-bar")!, log = $("#loader-log")!;
-  const msgs = ["initialising context…", "compiling shaders…", "tessellating icosphere…", "baking noise field…", "uploading buffers…", "first frame ✓"];
+  const msgs = ["initialising context…", "compiling shaders…", "unrolling golden spiral…", "growing chambers…", "uploading buffers…", "first frame ✓"];
   const o = { v: 0 };
   return new Promise<void>((resolve) => {
     if (REDUCE) { loader.style.display = "none"; resolve(); return; }
@@ -550,7 +552,7 @@ function setupScroll({ scene, heroMode, REDUCE, wireProgress, applyWire, signal 
   const wide = () => innerWidth > 1100;
   type St = Partial<SceneState> & { mode?: number };
   const states: Record<string, () => St> = {
-    hero: () => ({ x: wide() ? 0.42 : 0, y: wide() ? 0.08 : 0.3, scale: wide() ? 1.15 : 0.85, dim: wide() ? 1 : 0.6, plot: 1 }),
+    hero: () => ({ x: wide() ? 0.4 : 0, y: wide() ? 0.06 : 0.3, scale: wide() ? 1.15 : 0.72, dim: wide() ? 1 : 0.6, plot: 1 }),
     about: () => ({ x: wide() ? -0.55 : 0, y: 0, scale: 1.9, dim: 0.28, plot: 0.4, mode: 1 }),
     reel: () => ({ x: 0, y: 0, scale: 0.6, dim: 0, plot: 0 }),
     pipeline: () => ({ x: 0, y: 0, scale: 2.4, dim: 0.22, plot: 0.3, mode: 0 }),
