@@ -12,6 +12,7 @@ const instrument = Instrument_Serif({
   display: "swap",
 });
 
+//change this later after changing domain
 const SITE = "https://chandika-prabhashwara.vercel.app";
 
 export const metadata: Metadata = {
