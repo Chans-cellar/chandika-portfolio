@@ -1,0 +1,51 @@
+{
+  "items": [
+    {
+      "period": "Jul 2023 — Jan 2024",
+      "role": "Trainee Technical Artist",
+      "company": "Behaviol",
+      "current": false,
+      "node": "maya_unity_bridge",
+      "kind": "SOP",
+      "points": [
+        "Worked in a Maya → Unity production pipeline from day one",
+        "Exported and integrated rigs, materials and assets into Unity",
+        "Integrated animations into live gameplay systems",
+        "Created in-game cutscenes with Unity Timeline",
+        "Wrote procedural shaders for real-time rendering",
+        "Built workflow tools that cut repetitive manual work for Maya artists"
+      ]
+    },
+    {
+      "period": "Sep 2024 — Feb 2025",
+      "role": "Associate 3D Artist",
+      "company": "Hologo World",
+      "current": false,
+      "node": "asset_forge",
+      "kind": "VOP",
+      "points": [
+        "Modelled low-poly props and vegetation to project specifications",
+        "Generated terrain heightmaps in Gaea for landscape workflows",
+        "Created production textures through UV unwrapping and baking",
+        "Developed rigging systems and animations for dynamic assets",
+        "Designed real-time VFX with Unity Particle System and Embergen spritesheets",
+        "Authored procedural shaders and integrated optimised assets into Unity"
+      ]
+    },
+    {
+      "period": "May 2025 — Present",
+      "role": "Technical Artist",
+      "company": "VR Archives Studio",
+      "current": true,
+      "node": "metahuman_pipeline",
+      "kind": "HDA",
+      "points": [
+        "Developed tools to automate repetitive, error-prone tasks in the MetaHuman character pipeline",
+        "Designed and tested technical solutions for pipeline bottlenecks and performance limits",
+        "Built procedural Houdini tools for asset preparation, modification and iteration",
+        "Established pipeline standards and best practices for multi-artist collaboration",
+        "Bridged art and technology to keep workflows scalable and production-ready"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "items": [
+    {
+      "group": "Software & Tools",
+      "glyph": "◐",
+      "items": [
+        "Houdini",
+        "Maya",
+        "Blender",
+        "Unreal Engine",
+        "Unity",
+        "Substance Painter",
+        "Gaea",
+        "Embergen",
+        "Photoshop",
+        "Qt Designer"
+      ]
+    },
+    {
+      "group": "Code & Scripting",
+      "glyph": "{ }",
+      "items": [
+        "Python",
+        "VEX",
+        "HLSL",
+        "C#",
+        "AR Foundation"
+      ]
+    },
+    {
+      "group": "Technical & Artistic",
+      "glyph": "∂",
+      "items": [
+        "Tech Art",
+        "Shader Programming",
+        "Asset Integration Pipelines",
+        "Procedural Modelling",
+        "Polygonal Modelling",
+        "Texturing",
+        "Animation",
+        "Game Development",
+        "OOP"
+      ]
+    },
+    {
+      "group": "Strengths",
+      "glyph": "∞",
+      "items": [
+        "Proceduralism",
+        "Analytical Mindset",
+        "Problem Solving",
+        "Creativity",
+        "Teamwork",
+        "Communication"
+      ]
+    }
+  ]
+}
