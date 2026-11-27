@@ -17,6 +17,15 @@
         "Maya",
         "Rigging"
       ]
+    },
+    {
+      "title": "Matching Mesh Orientation in Houdini with PCA and Dihedral Rotation",
+      "url": "https://medium.com/@lwcprabhashwara/matching-mesh-orientation-in-houdini-with-pca-and-dihedral-rotation-1f034d07b783?sharedUserId=lwcprabhashwara",
+      "blurb": "A procedural approach for finding a meaningful orientation from arbitrary geometry and matching it to a target mesh.",
+      "tags": [
+        "Houdini",
+        "Principal Component Analysis"
+      ]
     }
   ]
 }
