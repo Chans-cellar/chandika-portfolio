@@ -9,12 +9,12 @@ import { pad } from "@/lib/split";
 type Filter = "all" | "artstation" | "linkedin";
 
 const SLOTS: { type: Work["type"]; text: React.ReactNode }[] = [
-  { type: "artstation", text: <>Add an artwork URL and its cover image in <code>src/lib/content.ts → works</code>.</> },
+  { type: "artstation", text: <>Add an artwork URL and its cover image in the editor at <code>/keystatic → Selected works</code>.</> },
   { type: "linkedin", text: <>Paste a LinkedIn post URL. The embed is generated for you.</> },
-  { type: "artstation", text: <>Use <code>size: &quot;tall&quot;</code> for vertical renders and breakdown sheets.</> },
+  { type: "artstation", text: <>Tick <code>Tall card</code> for vertical renders and breakdown sheets.</> },
   { type: "linkedin", text: <>Posts load lazily as they scroll into view, so the page stays fast.</> },
   { type: "artstation", text: <>Add an <code>embed</code> URL to show the interactive viewer.</> },
-  { type: "linkedin", text: <>Items show in the order you list them.</> },
+  { type: "linkedin", text: <>Drag items in the editor to change their order.</> },
 ];
 
 function LazyFrame({ src, title }: { src: string; title: string }) {

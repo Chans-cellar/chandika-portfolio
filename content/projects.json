@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "title": "Galle VR",
+      "org": "VR Archives Studio",
+      "stack": "Unreal · MetaHuman",
+      "url": "https://www.echoesofgalle.com/",
+      "image": null
+    },
+    {
+      "title": "Meta 11",
+      "org": "Behaviol",
+      "stack": "Maya · Unity Pipeline",
+      "url": "https://meta11.com/",
+      "image": null
+    },
+    {
+      "title": "Hologo Web AR",
+      "org": "Hologo",
+      "stack": "Blender · Unity",
+      "url": "https://app.hologo.world/",
+      "image": null
+    },
+    {
+      "title": "Racket-Rumble",
+      "org": "Personal Project",
+      "stack": "Unity · C#",
+      "url": "https://github.com/Chans-cellar/Racket-Rumble",
+      "image": null
+    },
+    {
+      "title": "Tower-Tangle",
+      "org": "Personal Project",
+      "stack": "Three.js",
+      "url": "https://tower-tangle.web.app/",
+      "image": null
+    },
+    {
+      "title": "Snake Prototype",
+      "org": "Commissioned",
+      "stack": "Unreal Blueprint",
+      "url": "",
+      "image": null
+    },
+    {
+      "title": "ADDICTION",
+      "org": "Short Film · BICT — USJ",
+      "stack": "Direction · Lighting",
+      "url": "",
+      "image": null
+    },
+    {
+      "title": "Fallen From",
+      "org": "Short Film · Freelance",
+      "stack": "Blender · CGI",
+      "url": "",
+      "image": null
+    }
+  ]
+}
