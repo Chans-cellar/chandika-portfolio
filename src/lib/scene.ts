@@ -195,6 +195,8 @@ export function createScene(
   window.addEventListener(
     "pointermove",
     (e) => {
+      // touch moves are scroll gestures: don't let them steer parallax or spin the specimen
+      if (e.pointerType === "touch") return;
       mouse.tx = (e.clientX / window.innerWidth) * 2 - 1;
       mouse.ty = -(e.clientY / window.innerHeight) * 2 + 1;
       ndc.set(mouse.tx, mouse.ty);
@@ -208,18 +210,21 @@ export function createScene(
     { passive: true, signal },
   );
 
-  // Drag-to-turn only in the hero, where the canvas is the subject.
+  // Drag-to-turn only in the hero, where the canvas is the subject (mouse/pen only:
+  // on touch the gesture is a scroll, and the browser sends pointercancel, not pointerup).
   document.getElementById("hero")?.addEventListener(
     "pointerdown",
     (e) => {
-      if ((e.target as Element).closest("a,button")) return;
+      if (e.pointerType === "touch" || (e.target as Element).closest("a,button")) return;
       drag.on = true;
       drag.lx = e.clientX;
       drag.ly = e.clientY;
     },
     { signal },
   );
-  window.addEventListener("pointerup", () => (drag.on = false), { signal });
+  const endDrag = () => (drag.on = false);
+  window.addEventListener("pointerup", endDrag, { signal });
+  window.addEventListener("pointercancel", endDrag, { signal });
 
   const timer = new THREE.Timer();
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

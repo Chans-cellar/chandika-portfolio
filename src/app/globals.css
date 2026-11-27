@@ -229,12 +229,14 @@ html:not(.js) .loader { display: none; }
 .hero__name {
   font-weight: 600; font-size: clamp(44px, 13.2vw, 230px);
   letter-spacing: -0.058em; line-height: .84; margin-bottom: clamp(24px, 4vw, 48px);
-  pointer-events: none;
+  color: #fff; pointer-events: none;
+  /* dark halo keeps the name legible over the light Shade-mode shell; invisible on the dark bg */
+  text-shadow: 0 0 .12em rgba(10, 10, 11, .55), 0 .02em .04em rgba(10, 10, 11, .5);
 }
 .hero__row { display: block; overflow: hidden; padding-bottom: .04em; }
 .hero__row--serif {
   font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -0.03em;
-  font-size: 1.1em; margin-left: 9vw; color: var(--ink);
+  font-size: 1.1em; margin-left: 9vw;
 }
 .hero__row--serif .ch:nth-child(1) { color: var(--acc); }
 .hero__bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; }
@@ -570,7 +572,11 @@ html:not(.js) .loader { display: none; }
 .contact__kicker { max-width: 46ch; line-height: 1.7; }
 .contact__title { font-size: clamp(56px, 11vw, 200px); font-weight: 600; letter-spacing: -0.06em; line-height: .88; margin: 28px 0 clamp(36px, 5vw, 64px); }
 .contact__title > span { display: block; overflow: hidden; padding-bottom: .05em; }
-.contact__title .serif { color: var(--acc); font-weight: 400; letter-spacing: -0.03em; padding-left: 8vw; }
+.contact__title .serif {
+  color: var(--acc); font-weight: 400; letter-spacing: -0.03em; padding-left: 8vw;
+  /* room for the italic descenders (g) inside the overflow-hidden reveal mask, without changing layout */
+  padding-bottom: .24em; margin-bottom: -.19em;
+}
 .contact__mail {
   display: inline-flex; align-items: center; gap: clamp(12px, 2vw, 28px);
   font-size: clamp(16px, 4.3vw, 64px); letter-spacing: -0.04em; font-weight: 400;
